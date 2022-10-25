@@ -1,0 +1,28 @@
+@import "src/scss/variables";
+
+/* Structure */
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 1rem;
+    width: 98%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1rem;
+}
+
+.container-btn-new {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 1rem -0.6rem;
+
+    button {
+        width: 25%;
+        color: $default_white;
+        background: $button_purpure;
+        cursor: pointer;
+    }
+}
