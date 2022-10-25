@@ -2,7 +2,7 @@
     <mat-card class="post-card" *ngFor="let post of posts">
         <mat-card-header>
             <mat-card-title>
-                <a [routerLink]="['/post', post.uid]">
+                <a [routerLink]="['/post', post.id]">
                     {{ post.titlePost }}
                 </a>
             </mat-card-title>

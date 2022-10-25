@@ -11,6 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 const myModule = [
@@ -24,7 +26,8 @@ const myModule = [
   MatFormFieldModule,
   MatProgressSpinnerModule,
   MatDividerModule,
-  MatChipsModule
+  MatChipsModule,
+  MatInputModule
 ];
 
 @NgModule({

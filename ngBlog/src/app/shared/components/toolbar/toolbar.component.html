@@ -2,13 +2,25 @@
     <a routerLink="/">{{appName}}</a>
     <!-- El espan funciona para hacer que el ngblog aparezca a la izquierda y todo lo demás a la derecha -->
     <span class="fill-remaining-space"></span>
-    <a routerLink="/login" routerLinkActive="active">
-        <button mat-button>Loggin</button>
-    </a>
-    <a routerLink="/admin" routerLinkActive="active">
+
+    <a routerLink="/admin" routerLinkActive="active" 
+       *ngIf="authSvc.userData | async"
+    >
         <button mat-button>Admin</button>
     </a>
+
     <a routerLink="/about" routerLinkActive="active">
         <button mat-button>About</button>
     </a>
+
+    <a *ngIf="authSvc.userData | async; else showLogin" (click)="onLogout()">
+        <button mat-button>Logout</button>
+    </a>
+
+    <ng-template #showLogin>
+        <a routerLink="/login" routerLinkActive="active">
+            <button mat-button>Loggin</button>
+        </a>
+    </ng-template>
+
 </mat-toolbar>

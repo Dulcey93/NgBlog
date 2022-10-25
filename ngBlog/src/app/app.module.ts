@@ -15,6 +15,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule, BUCKET} from '@angular/fire/compat/storage';
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
 
 
@@ -23,7 +26,8 @@ import { environment } from 'src/environments/environment';
     AppComponent,
     NewPostComponent,
     PostComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ContainerAppComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,8 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     NewPostModule,
     MaterialModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: BUCKET, useValue:'gs://ngblog-b2b0b.appspot.com'}

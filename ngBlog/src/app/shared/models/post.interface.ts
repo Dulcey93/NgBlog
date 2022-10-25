@@ -1,5 +1,5 @@
 export interface PostI{
-    uid: string;
+    id?: string;
     titlePost: string;
     contentPost: string;
     imagePost?: string;
