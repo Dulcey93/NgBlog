@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <a routerLink="/">{{appName}}</a>
+    <!-- El espan funciona para hacer que el ngblog aparezca a la izquierda y todo lo demás a la derecha -->
+    <span class="fill-remaining-space"></span>
+    <a routerLink="/login" routerLinkActive="active">
+        <button mat-button>Loggin</button>
+    </a>
+    <a routerLink="/admin" routerLinkActive="active">
+        <button mat-button>Admin</button>
+    </a>
+    <a routerLink="/about" routerLinkActive="active">
+        <button mat-button>About</button>
+    </a>
+</mat-toolbar>
