@@ -10,6 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
+/* Firebase */
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; 
+import { AngularFireStorageModule, BUCKET} from '@angular/fire/compat/storage';
+import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +27,17 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     AppRoutingModule,
     NewPostModule,
-    BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    {provide: BUCKET, useValue:'gs://ngblog-b2b0b.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
