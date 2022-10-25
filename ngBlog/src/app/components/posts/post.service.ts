@@ -13,7 +13,7 @@ export class PostService {
   private postsCollection: AngularFirestoreCollection<PostI>;
   private filePath: any;
   private downloadURL: Observable<string>;
-
+  
   constructor(
     private afs: AngularFirestore,
     private storage: AngularFireStorage
