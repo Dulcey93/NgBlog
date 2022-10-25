@@ -8,7 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 const myModule = [
@@ -19,7 +19,9 @@ const myModule = [
   MatIconModule,
   MatSidenavModule,
   MatListModule,
-  MatFormFieldModule];
+  MatFormFieldModule,
+  MatProgressSpinnerModule
+];
 
 @NgModule({
   declarations: [],
