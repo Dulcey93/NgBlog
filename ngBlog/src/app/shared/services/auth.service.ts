@@ -11,7 +11,7 @@ import { FileI } from '../models/file.interface';
 })
 export class AuthService {
   public userData$: Observable<firebase.User>;
-  private filePath: string;
+  private filePath!: string;
 
   constructor(private afAuth: AngularFireAuth, private storage: AngularFireStorage) {
     this.userData$ = afAuth.authState;
@@ -19,13 +19,15 @@ export class AuthService {
 
   loginByEmail(user: UserI) {
     const { email, password } = user;
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.afAuth.signInWithEmailAndPassword(user.email, user.password!);
+    /* return this.afAuth.auth.signInWithEmailAndPassword(email, password); */
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    this.afAuth.signOut();
+    /* this.afAuth.auth.signOut(); */
   }
-  preSaveUserProfile(user: UserI, image?: FileI): void {
+  preSaveUserProfile(user: UserI, image: FileI): void {
     if (image) {
       this.uploadImage(user, image);
     } else {
@@ -54,6 +56,7 @@ export class AuthService {
       photoURL: user.photoURL
     })
       .then(() => console.log('User updated!'))
+      /* .catch((err: any) => console.log('Error', err)); */
       .catch(err => console.log('Error', err));
   }
 }

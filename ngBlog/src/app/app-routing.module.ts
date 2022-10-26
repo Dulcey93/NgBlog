@@ -1,4 +1,4 @@
-/* import { DetailsPostComponent } from './components/posts/details-post/details-post.component'; */
+import { DetailsPostComponent } from './components/posts/details-post/details-post.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./components/pages/home/home.module').then(m => m.HomeModule)
       },
-      /* { path: 'post/:id', component: DetailsPostComponent }, */
+      { path: 'post/:id', component: DetailsPostComponent },
       {
         path: 'about',
         loadChildren: () =>

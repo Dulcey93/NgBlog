@@ -4,6 +4,7 @@ import { UserI } from '../../../shared/models/user.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,10 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.loginForm.value);
+    
+  }
 
   onLogin(form: UserI) {
     this.authSvc
