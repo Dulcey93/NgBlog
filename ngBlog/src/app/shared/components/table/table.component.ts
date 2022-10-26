@@ -19,8 +19,8 @@ export class TableComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['titlePost', 'tagsPost', 'actions'];
   dataSource = new MatTableDataSource();
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator | null;
+  @ViewChild(MatSort, { static: true }) sort!: MatSort | null;
 
   constructor(private postSvc: PostService, public dialog: MatDialog) { }
 

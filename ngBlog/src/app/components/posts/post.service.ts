@@ -12,7 +12,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 export class PostService {
   private postsCollection: AngularFirestoreCollection<PostI>;
   private filePath: any;
-  private downloadURL: Observable<string>;
+  /* private downloadURL: Observable<string>; */
   
   constructor(
     private afs: AngularFirestore,
@@ -35,7 +35,7 @@ export class PostService {
       );
   }
   /* Observable undefined? */
-  public getOnePost(id: PostI): Observable<PostI> {
+  public getOnePost(id: PostI): Observable<PostI | undefined> {
     return this.afs.doc<PostI>(`posts/${id}`).valueChanges();
   }
 
@@ -59,7 +59,7 @@ export class PostService {
     const postObj = {
       titlePost: post.titlePost,
       contentPost: post.contentPost,
-      imagePost: this.downloadURL,
+      /* imagePost: this.downloadURL, */
       fileRef: this.filePath,
       tagsPost: post.tagsPost
     };
@@ -80,7 +80,7 @@ export class PostService {
       .pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe(urlImage => {
-            this.downloadURL = urlImage;
+            /* this.downloadURL = urlImage; */
             this.savePost(post);
           });
         })
